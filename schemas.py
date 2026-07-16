@@ -23,3 +23,18 @@ class MenuBase(BaseModel):
 class Menu(MenuBase):
     item_id: int
 
+
+
+
+class CreateOrder(BaseModel):
+    customer_name: str
+    delivery: bool
+    promo_code: str | None
+    items: list[OrderItemRequest]
+
+class UpdateOrder(BaseModel):
+    customer_name: str | None = None
+    delivery: bool | None = None
+    promo_code: str | None = None
+    items: list[OrderItemRequest] | None = None
+
